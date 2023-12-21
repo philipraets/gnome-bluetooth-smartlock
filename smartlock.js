@@ -1,16 +1,19 @@
-const Main = imports.ui.main;
-const MainLoop = imports.mainloop;
-const ExtensionUtils = imports.misc.extensionUtils;
-const GnomeBluetooth = imports.gi.GnomeBluetooth;
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import GnomeBluetooth from 'gi://GnomeBluetooth';
+import GLib from 'gi://GLib';
 
-const Me = ExtensionUtils.getCurrentExtension();
-const {Settings} = Me.imports.settings;
+import { Extension, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
+
+import * as Settings from './settings.js';
+
+const MainLoop = new GLib.MainLoop(null, false);
+
 
 // eslint-disable-next-line no-unused-vars
 var SmartLock = class SmartLock {
     constructor() {
         this._client = new GnomeBluetooth.Client();
-        this._settings = new Settings();
+        this._settings = new Settings(this.getSettings());
         this._deviceAddress = null;
         this._deviceChangeHandlerId = 0;
         this._lastSeen = 0;

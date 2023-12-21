@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 00:07+0700\n"
+"POT-Creation-Date: 2023-09-25 15:18+0200\n"
 "PO-Revision-Date: 2022-11-03 17:22+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -17,26 +17,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.2\n"
 
-#: indicator.js:19
+#: indicator.js:18
 msgid "Bluetooth Smartlock"
 msgstr "Slimme bluetoothvergrendeling"
 
-#: indicator.js:29
+#: indicator.js:28
 msgid "Active"
 msgstr "Actief"
 
-#: indicator.js:40
+#: indicator.js:39
 msgid "Smart Lock"
 msgstr "Vergrendeling"
 
-#: indicator.js:47
+#: indicator.js:46
 msgid "Settings"
 msgstr "Voorkeuren"
 
-#: indicator.js:53
+#: indicator.js:52
 msgid "Devices"
 msgstr "Apparaten"
 
-#: prefs.js:32
+#: prefs.js:25
 msgid "Advanced Settings"
 msgstr "Geavanceerde voorkeuren"

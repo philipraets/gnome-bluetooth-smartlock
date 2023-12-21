@@ -1,24 +1,17 @@
 'use strict';
 
-const Gio = imports.gi.Gio;
-const Gtk = imports.gi.Gtk;
+import Gio from 'gi://Gio';
+import Gtk from 'gi://Gtk';
 
-// It's common practice to keep GNOME API and JS imports in separate blocks
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const {Settings} = Me.imports.settings;
-const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
-const _ = Gettext.gettext;
+import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+
+import * as Settings from './settings.js';
+
 /**
  * Steps to run on initialization of preferenences dialog
  */
 // eslint-disable-next-line no-unused-vars
-function init() {
-    log(`[bluetooth-smartlock] Initializing ${Me.metadata.name} Preferences`);
-    ExtensionUtils.initTranslations(Me.metadata['gettext-domain']);
-}
-
-class SettingsBuilder {
+export default class SettingsBuilder extends ExtensionPreferences {
     constructor() {
         this._settings = new Settings()._settings;
         this._builder = new Gtk.Builder();

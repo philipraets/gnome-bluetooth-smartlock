@@ -1,15 +1,14 @@
-const {GObject, St} = imports.gi;
+import GObject from 'gi://GObject';
+import St from 'gi://St';
+import Gio from 'gi://Gio';
+import GnomeBluetooth from 'gi://GnomeBluetooth';
 
-const Gio = imports.gi.Gio;
-const PanelMenu = imports.ui.panelMenu;
-const PopupMenu = imports.ui.popupMenu;
-const ExtensionUtils = imports.misc.extensionUtils;
-const GnomeBluetooth = imports.gi.GnomeBluetooth;
+import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
+import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 
-const Me = ExtensionUtils.getCurrentExtension();
-const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
-const {Settings} = Me.imports.settings;
-const _ = Gettext.gettext;
+import { Extension, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
+
+import * as Settings from './settings.js';
 
 
 // eslint-disable-next-line no-unused-vars
@@ -46,7 +45,7 @@ var Indicator = GObject.registerClass(
             let icon = new Gio.ThemedIcon({name: 'emblem-system-symbolic'});
             let settingsMenu = new PopupMenu.PopupImageMenuItem(_('Settings'), icon);
             settingsMenu.connect('activate', () => {
-                ExtensionUtils.openPrefs();
+                this.openPreferences();
             });
             this.menu.addMenuItem(settingsMenu);
 

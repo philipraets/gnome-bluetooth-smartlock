@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-28 00:10+0700\n"
+"POT-Creation-Date: 2023-09-25 15:18+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,26 +13,26 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: indicator.js:19
+#: indicator.js:18
 msgid "Bluetooth Smartlock"
 msgstr ""
 
-#: indicator.js:29
+#: indicator.js:28
 msgid "Active"
 msgstr "Hoạt động"
 
-#: indicator.js:40
+#: indicator.js:39
 msgid "Smart Lock"
 msgstr ""
 
-#: indicator.js:47
+#: indicator.js:46
 msgid "Settings"
 msgstr "Thiết lập"
 
-#: indicator.js:53
+#: indicator.js:52
 msgid "Devices"
 msgstr "Thiết bị"
 
-#: prefs.js:32
+#: prefs.js:25
 msgid "Advanced Settings"
 msgstr "Thiết lập nâng cao"

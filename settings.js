@@ -1,7 +1,3 @@
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-
-
 const SCAN_INTERVAL_KEY = 'interval';
 const ACTIVE_KEY = 'active';
 const AWAY_DURATION = 'duration-in-seconds';
@@ -10,8 +6,8 @@ const DEVICE_MAC_KEY = 'mac';
 
 // eslint-disable-next-line no-unused-vars
 var Settings = class Settings {
-    constructor() {
-        this._settings = ExtensionUtils.getSettings(Me.metadata['settings-schema']);
+    constructor(settings) {
+        this._settings = settings;
     }
 
     getScanInterval() {

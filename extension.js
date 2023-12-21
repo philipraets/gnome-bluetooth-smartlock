@@ -18,23 +18,23 @@
 
 /* exported init */
 
-const Main = imports.ui.main;
-const ExtensionUtils = imports.misc.extensionUtils;
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-const Me = ExtensionUtils.getCurrentExtension();
-const {Settings} = Me.imports.settings;
-const {SmartLock} = Me.imports.smartlock;
-const {Indicator} = Me.imports.indicator;
+import { Extension, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 
-class Extension {
-    constructor(uuid) {
-        this._uuid = uuid;
+import * as Settings from './settings.js';
+import * as SmartLock from './smartlock.js';
+import * as Indicator from './indicator.js';
+
+export default class GnomeBluetoothSmartLock extends Extension {
+    constructor() {
+        this._uuid = 'gnome-bluetooth-smartlock';
         this._indicatorChangeHandlerId = 0;
     }
 
     enable() {
         this._indicator = new Indicator();
-        this._settings = new Settings();
+        this._settings = new Settings(this.getSettings());
         Main.panel.addToStatusArea(this._uuid, this._indicator);
 
         // Set default state when extension enabled
@@ -67,12 +67,3 @@ class Extension {
     }
 }
 
-/**
- * Steps to run on initialization of the extension
- *
- * @param {Extension} meta The extension
- */
-function init(meta) {
-    ExtensionUtils.initTranslations(Me.metadata['gettext-domain']);
-    return new Extension(meta.uuid);
-}
